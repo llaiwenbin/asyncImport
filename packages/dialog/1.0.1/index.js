@@ -1,0 +1,1 @@
+window[`xe-dialog-1.0.1`] = '我是dialog 1.0.1'

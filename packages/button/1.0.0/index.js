@@ -1,0 +1,1 @@
+window[`xe-button-1.0.0`] = '我是button 1.0.0'

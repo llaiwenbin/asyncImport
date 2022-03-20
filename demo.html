@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="./src/index.js"></script>
+</head>
+<body>
+
+    <script>
+        function loadButton(){
+            window.asyncImport({
+                component:'button',
+                version:'1.0.0'
+            }).then(res =>{
+                console.log('加载 button 成功',res);
+            }).catch(err =>{
+                console.error('加载 button 失败',err);
+            })
+        }
+        function loadDialog(){
+            const name = 'my-custom-dialog';
+            window.asyncImport({
+                component:'dialog',
+                version:'1.0.1',
+                name
+            }).then(res =>{
+                console.log('加载 dialog 成功',res,window[name]);
+            }).catch(err =>{
+                console.error('加载 dialog 失败',err);
+            })
+        }
+    </script>
+    <button onclick="loadButton()">按钮</button>
+    <button onclick="loadDialog()">弹框</button>
+    
+</body>
+</html>
